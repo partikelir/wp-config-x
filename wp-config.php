@@ -18,9 +18,9 @@ if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
 	include( dirname( __FILE__ ) . '/wp-config-local.php' );
 } else {
 	define( 'WP_LOCAL_DEV', false );
-	define( 'DB_NAME', '' );
-	define( 'DB_USER', '' );
-	define( 'DB_PASSWORD', '' );
+	define( 'DB_NAME', 'db_name' );
+	define( 'DB_USER', 'db_user' );
+	define( 'DB_PASSWORD', 'db_password' );
 	define( 'DB_HOST', 'localhost' );
 }
 
@@ -38,14 +38,6 @@ $table_prefix  = 'wp_'; // Alter this value to enhance security or when installi
 /*
  * Authentication keys and salts; generate your own at https://api.wordpress.org/secret-key/1.1/salt/
  */
-define('AUTH_KEY',         '');
-define('SECURE_AUTH_KEY',  '');
-define('LOGGED_IN_KEY',    '');
-define('NONCE_KEY',        '');
-define('AUTH_SALT',        '');
-define('SECURE_AUTH_SALT', '');
-define('LOGGED_IN_SALT',   '');
-define('NONCE_SALT',       '');
 
 
 
@@ -61,7 +53,6 @@ define('NONCE_SALT',       '');
 //!defined( 'WP_MEMORY_LIMIT' ) && define( 'WP_MEMORY_LIMIT', '64M' ); // Set PHP memory limit for WP; no need to adjust unless you run into problems.
 //!defined( 'CUSTOM_USER_TABLE' ) && define( 'CUSTOM_USER_TABLE', $table_prefix . 'my_users' ); // Custom user and usermeta tables.
 //!defined( 'CUSTOM_USER_META_TABLE' ) && define( 'CUSTOM_USER_META_TABLE', $table_prefix . 'my_usermeta' );
-//!defined( 'WP_ALLOW_MULTISITE' ) && define( 'WP_ALLOW_MULTISITE', true ); // Enable multisite.
 //!defined( 'WP_ALLOW_REPAIR' ) && define( 'WP_ALLOW_REPAIR', true ); // Automatic database optimization; use "only when the feature is required".
 
 
@@ -101,7 +92,27 @@ define('NONCE_SALT',       '');
 
 
 /*
- * Security; mainly from http://www.askapache.com/wordpress/advanced-wp-config-php-tweaks.html
+ * Multisite. I've never used it before so I have no idea what this stuff does. Most items from: http://scotty-t.com/2012/01/18/wordpress-in-dev-qa-and-prod/
+ */
+//!defined( 'WP_ALLOW_MULTISITE' ) && define( 'WP_ALLOW_MULTISITE', true ); // Enable multisite.
+//!defined( 'MULTISITE' ) && define( 'MULTISITE', true );
+//!defined( 'SUBDOMAIN_INSTALL' ) && define( 'SUBDOMAIN_INSTALL', false );
+//!defined( 'DOMAIN_CURRENT_SITE' ) && define( 'DOMAIN_CURRENT_SITE', 'www.emusic.com' );
+//!defined( 'PATH_CURRENT_SITE' ) && define( 'PATH_CURRENT_SITE', '/' );
+//!defined( 'SITE_ID_CURRENT_SITE' ) && define( 'SITE_ID_CURRENT_SITE', 1 );
+//!defined( 'BLOG_ID_CURRENT_SITE' ) && define( 'BLOG_ID_CURRENT_SITE', 1 );
+//$base = '/';
+
+
+
+/*
+ * File system and cookies. I didn't bother including any of this stuff; please refer to http://www.askapache.com/wordpress/advanced-wp-config-php-tweaks.html#File_System_Permissions
+ */
+
+
+
+/*
+ * Security. Mainly taken from http://www.askapache.com/wordpress/advanced-wp-config-php-tweaks.html
  */
 //!defined( 'DISALLOW_FILE_EDIT' ) && define( 'DISALLOW_FILE_EDIT', true ); // Disable back-end plugin/theme editor.
 //!defined( 'DISALLOW_FILE_MODS' ) && define( 'DISALLOW_FILE_MODS', true ); // Disable back-end plugin/theme updating and installation. (Only set one of these.)
@@ -133,8 +144,8 @@ if ( WP_DEBUG ) {
   //!defined( 'ACTION_DEBUG' ) && define( 'ACTION_DEBUG', true); // Not really sure what this is about...
   //!defined( 'SCRIPT_DEBUG' ) && define( 'SCRIPT_DEBUG', true); // Allows edits of scriptname.dev.js in the wp-includes/js and wp-admin/js dirs.
   !defined( 'WP_DEBUG_LOG' ) && define( 'WP_DEBUG_LOG', true ); // Log PHP errors to WP_CONTENT_DIR/debug.log
-  !defined( 'WP_DEBUG_DISPLAY' ) && define( 'WP_DEBUG_DISPLAY', false ); // Set to false to default back to globally configured 'display_errors' setting.
-  @ini_set( 'display_errors', 'Off' );
+  //!defined( 'WP_DEBUG_DISPLAY' ) && define( 'WP_DEBUG_DISPLAY', false ); // Set to false to default back to globally configured 'display_errors' setting; didn't seem to work for me.
+  //@ini_set( 'display_errors', 'Off' );
   @ini_set( 'log_errors', 'On' );
 }
 
