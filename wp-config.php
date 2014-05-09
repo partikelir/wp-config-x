@@ -78,7 +78,7 @@ defined( 'WP_DEFAULT_THEME' )                 || define( 'WP_DEFAULT_THEME', 'tw
 //defined( 'WP_MEMORY_MAX_LIMIT' )              || define( 'WP_MEMORY_MAX_LIMIT', '512M' );
 
 // Number of post revisions to save or 'false' to disable this feature. Default: ?.
-defined( 'WP_POST_REVISIONS' ) || define( 'WP_POST_REVISIONS', false );
+defined( 'WP_POST_REVISIONS' ) || define( 'WP_POST_REVISIONS', 3 );
 
 
 
@@ -172,7 +172,9 @@ defined( 'WPLANG' )                           || define( 'WPLANG', '' );
 // Totally untested; should be false for WordPress themes with a build script
 // defined( 'COMPRESS_CSS' )                    || define( 'COMPRESS_CSS', true );
 // defined( 'COMPRESS_SCRIPTS' )                || define( 'COMPRESS_SCRIPTS', true );
-// defined( 'CONCATENATE_SCRIPTS' )             || define( 'CONCATENATE_SCRIPTS', true );
+
+// Stops some jQuery errors on the backend when false is explicitly declared.
+defined( 'CONCATENATE_SCRIPTS' )             || define( 'CONCATENATE_SCRIPTS', false );
 // defined( 'ENFORCE_GZIP' )                    || define( 'ENFORCE_GZIP', true );
 
 
