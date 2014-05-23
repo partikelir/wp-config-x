@@ -44,6 +44,3 @@
 *.zip binary
 *.7z binary
 *.ttf binary
-
-# Encrypted
-lib/* filter=git-crypt diff=git-crypt
