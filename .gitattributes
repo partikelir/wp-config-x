@@ -44,5 +44,3 @@
 *.zip binary
 *.7z binary
 *.ttf binary
-
-lib/* filter=crypt diff=crypt
