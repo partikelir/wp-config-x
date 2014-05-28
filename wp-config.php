@@ -154,7 +154,7 @@ defined( 'WPLANG' )                           || define( 'WPLANG', '' );
 // Some tweaks via: http://comments.gmane.org/gmane.comp.web.wordpress.testers/72 & http://codex.wordpress.org/Class_Reference/WP_Object_Cache
 
 // For use with persistent cache plugin; has no effect on its own in newer versions of WP.
-//defined( 'WP_CACHE' )                         || define( 'WP_CACHE', true );
+defined( 'WP_CACHE' )                         || define( 'WP_CACHE', true );
 
 // Deprecated? I can't find anything that confirms this is still in use.
 //defined( 'ENABLE_CACHE' )                     || define( 'ENABLE_CACHE', true );
