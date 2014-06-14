@@ -100,6 +100,9 @@ defined( 'WP_POST_REVISIONS' ) || define( 'WP_POST_REVISIONS', 3 );
 //defined( 'TEMPLATEPATH' )                     || define( 'TEMPLATEPATH', WP_CONTENT_DIR . '/themes/active-theme' );
 //defined( 'STYLESHEETPATH' )                   || define( 'STYLESHEETPATH', WP_CONTENT_DIR . '/themes/active-theme' );
 
+// Define uploads directory. This used to be set in the WordPress admin area.
+//defined( 'UPLOADS' )                          || define( 'UPLOADS', 'wp-content/media' ); // Default: wp-content/uploads
+
 // Define languages directory.
 //defined( 'WP_LANG_DIR' )                      || define( 'WP_LANG_DIR', ABSPATH . 'wp-content/languages' ); // Defaults: wp-content/languages, wp-includes/languages.
 
